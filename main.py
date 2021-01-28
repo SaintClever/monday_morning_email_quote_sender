@@ -10,7 +10,16 @@ weekday = now.weekday()
 # Email
 sender_email = 'sender_email'
 recipient_email = 'recipient_email'
-password = 'my_password' # input('password: ')
+password = 'my_password' # or input('password: ')
+
+# Outgoing Mail (SMTP) Servers, gmail by default
+# GMX: smtp.gmx.com
+# Gmail: smtp.gmail.com
+# Hotmail: smtp.live.com
+# Outlook: outlook.office365.com
+# Yahoo: smtp.mail.yahoo.com
+smtp_server = 'smtp.gmail.com'
+
 
 
 if weekday == 0:
@@ -25,7 +34,7 @@ if weekday == 0:
         
         
     try:        
-        with smtplib.SMTP('smtp.gmail.com', port=587) as connection:
+        with smtplib.SMTP(smtp_server, port=587) as connection:
             connection.ehlo()
             connection.starttls()
             connection.login(user=sender_email, password=password)
