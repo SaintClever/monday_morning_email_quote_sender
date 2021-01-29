@@ -43,7 +43,7 @@ if weekday == 0:
             connection.login(user=sender_email, password=password)
             connection.sendmail(
                 from_addr=sender_email,
-                to_addrs=recipient_email,
+                to_addr=recipient_email,
                 msg=' '.join([
                     f'From: {sender_email}',
                     f'To: {recipient_email}',
